@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#aboutus" class="dropbtn">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="#volunteers">volunteer</a>
+                        <a href="#talents">talents</a>
+                    </div>
+                </li>
+                <li><a href="#donations">Donations</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdown = document.querySelector('.dropbtn');
+            dropdown.addEventListener('click', function () {
+                var dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <img class="logo" src="LOGO SKILLSPHERE.jpeg" alt="SkillSphere Logo">
+
+    <section id="home">
+        <h2>Welcome to SkillSphere</h2>
+        <p>CREATING OPPORTUNITIES, MENTORSHIP AND EDUCATION.</p>
+    </section>
+
+    <section id="volunteers">
+        <h2>Volunteers</h2>
+        <form id="volunteerForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+            <label for="age">Age (18 and above)</label>
+            <input type="number" id="age" required>
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation" required>
+            <label for="email">Email (For verification and background check)</label>
+            <input type="email" id="email" required>
+            <label for="contribution">Contribution</label>
+            <input type="text" id="contribution" required>
+            <button type="submit">Register as Volunteer</button>
+        </form>
+        <div id="mentorList"></div>
+    </section>
+
+    <section id="rejuvenatingtalents">
+        <h2>Rejuvenating Talents</h2>
+        <form id="rejuvenatingtalentsForm">
+            <label for="craftsmanName">Name</label>
+            <input type="text" id="craftsmanName" required>
+            <label for="age">Age</label>
+            <input type="number" id="age" required>
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="skills">Skills</label>
+            <input type="text" id="skills" required>
+            <button type="submit">Find Jobs</button>
+        </form>
+        <div id="jobList"></div>
+    </section>
+
+    <section id="donations">
+        <h2>Donate</h2>
+        <form id="donationForm">
+            <label for="donorName">Name:</label>
+            <input type="text" id="donorName" required>
+            <label for="donorAge">Age:</label>
+            <input type="number" id="donorAge" required>
+            <label for="donorGender">Gender:</label>
+            <select id="donorGender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="donorEmail">Email:</label>
+            <input type="email" id="donorEmail" required>
+            <label for="donationAmount">Amount:</label>
+            <input type="number" id="donationAmount" required>
+            <button type="submit">Donate</button>
+        </form>
+        <div id="donationList"></div>
+    </section>
+
+    <section id="aboutus">
+        <h2>About Us</h2>
+        <p>
+            Our platform's vision is truly inspiring, focusing on breaking cycles of poverty and crime through education and mentorship. By empowering skilled individuals and connecting them with opportunities, we're fostering economic stability and growth. The involvement of volunteers as mentors to guide and train craftsmen and laborers is a powerful approach to creating lasting change.
+        </p>
+        <p>
+            Volunteers on our platform have the flexibility to contribute whenever and wherever they can, engaging in various activities aimed at the betterment of communities. This adaptability enhances the impact they can make, ensuring that their efforts align with the needs of the people they are helping.
+        </p>
+        <p>
+            Organizing volunteers into teams based on their education level is a great approach. It allows us to leverage their skills and knowledge more effectively, ensuring that each volunteer can contribute in a way that maximizes their impact on the community. This structure will help in addressing various needs more efficiently.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>SkillSphere is designed to be a transformative force for communities, harnessing the power of education, mentorship, and volunteerism to break the cycles of poverty, illiteracy, and crime.</li>
+            <li>Our platform connects individuals from underprivileged backgrounds—such as skilled craftsmen, laborers, and students in slum areas—with opportunities for education, economic stability, and personal growth.</li>
+            <li>The platform focuses on rejuvenating traditional skills and crafts by connecting skilled workers with trained volunteers who act as mentors.</li>
+            <li>Volunteers are organized into teams based on their education level, ensuring effective contributions to community development.</li>
+            <li>The platform facilitates donations to support initiatives aimed at improving the lives of those in need.</li>
+            <li>SkillSphere is a movement aimed at empowering communities, reducing crime, and building a better future for all.</li>
+        </ul>
+
+        <img class="image1" src="img skillsphere2.jpeg" alt="SkillSphere Community Work">
+    </section>
+
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <p>We value your suggestions! Your responses will remain completely anonymous.We do not collect any personal identifying information, and your individual answers will not be shared with anyone outside of our research team. The primary objective of this survey is to gather insights that will contribute to the development of educational strategies aimed at improving societal well-being.
+        We appreciate your time and contribution to this important project. Your input will help us in our mission to foster positive change through education.Empowering Communities through Education, a projects for public interest and serving our duty as engineers by THE ETHICAL CREATORS! </p>
+        <p><a href="https://forms.gle/okBWY3aAjfdcsG7s8" target="_blank">Provide Feedback via Google Form</a></p>
+    </section>
+
+    <img class="image2" src="img skillsphere1..jpeg" alt="SkillSphere Initiatives">
+
+    <section id="contactus">
+        <h2>Contact Us</h2>
+        <p>Customer Care: +91-xyz1267805</p>
+        <p>Email: contact@skillsphere.com</p>
+    </section>
+
+    <script src="blockchain.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
