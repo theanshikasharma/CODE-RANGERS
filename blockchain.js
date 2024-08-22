@@ -1,60 +1,52 @@
-class Block {
-    constructor(index, timestamp, data, previousHash = '') {
-        this.index = index;
-        this.timestamp = timestamp;
-        this.data = data;
-        this.previousHash = previousHash;
-        this.hash = this.calculateHash();
-    }
+const platformBlockchain = new Blockchain();
 
-    calculateHash() {
-        return ${this.index}${this.timestamp}${JSON.stringify(this.data)}${this.previousHash}.hashCode();
-    }
-}
+document.getElementById('Volunteers').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('Age').value;  
+    const gender = document.getElementById('Gender').value;  
+    const occupation = document.getElementById('Occupation').value;  
+    const email = document.getElementById('Email').value; 
+    const contribution = document.getElementById('Contribution').value;  
+    const data = { name, age, gender, occupation, email, contribution };
+    const newBlock = new Block(platformBlockchain.chain.length, Date.now(), data);
+    platformBlockchain.addBlock(newBlock);
+    
+    const volunteers = document.getElementById('Volunteers');
+    const div = document.createElement('div');
+    div.textContent = ${name} ${age} ${gender} ${occupation} ${email} (${contribution}) has registered as a volunteer.;
+    volunteers.appendChild(div);
+});
 
-class Blockchain {
-    constructor() {
-        this.chain = [this.createGenesisBlock()];
-    }
+document.getElementById('rejuvenatingtalents').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const skills = document.getElementById('skills').value;
+    const data = { name, age, gender, skills };
+    const newBlock = new Block(platformBlockchain.chain.length, Date.now(), data);
+    platformBlockchain.addBlock(newBlock);
+    
+    const rejuvenatingTalents = document.getElementById('rejuvenatingtalents');
+    const div = document.createElement('div');
+    div.textContent = ${name} applied as a volunteer whose age is ${age} and gender is ${gender} with skills: ${skills}.;
+    rejuvenatingTalents.appendChild(div);
+});
 
-    createGenesisBlock() {
-        return new Block(0, Date.now(), "Genesis Block", "0");
-    }
-
-    getLatestBlock() {
-        return this.chain[this.chain.length - 1];
-    }
-
-    addBlock(newBlock) {
-        newBlock.previousHash = this.getLatestBlock().hash;
-        newBlock.hash = newBlock.calculateHash();
-        this.chain.push(newBlock);
-    }
-
-    isChainValid() {
-        for (let i = 1; i < this.chain.length; i++) {
-            const currentBlock = this.chain[i];
-            const previousBlock = this.chain[i - 1];
-
-            if (currentBlock.hash !== currentBlock.calculateHash()) {
-                return false;
-            }
-
-            if (currentBlock.previousHash !== previousBlock.hash) {
-                return false;
-            }
-        }
-        return true;
-    }
-}
-
-
-String.prototype.hashCode = function() {
-    var hash = 0, i, chr;
-    for (i = 0; i < this.length; i++) {
-        chr = this.charCodeAt(i);
-        hash = ((hash << 5) - hash) + chr;
-        hash |= 0; 
-    }
-    return hash;
-};
+document.getElementById('donate').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('Name').value;  
+    const age = document.getElementById('Age').value;  
+    const gender = document.getElementById('gender').value;
+    const email = document.getElementById('email').value;
+    const amount = document.getElementById('amount').value;
+    const data = { name, age, gender, email, amount };
+    const newBlock = new Block(platformBlockchain.chain.length, Date.now(), data);
+    platformBlockchain.addBlock(newBlock);
+    
+    const donate = document.getElementById('donate');
+    const div = document.createElement('div');
+    div.textContent = ${name} whose age is ${age} and gender is ${gender} with email ${email} donated ${amount} units.;
+    donate.appendChild(div);
+});
