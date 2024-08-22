@@ -8,7 +8,6 @@ class Block {
     }
 
     calculateHash() {
-        
         return ${this.index}${this.timestamp}${JSON.stringify(this.data)}${this.previousHash}.hashCode();
     }
 }
